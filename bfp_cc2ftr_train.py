@@ -29,7 +29,7 @@ def train_model(data, params):
 
     optimizer = torch.optim.Adam(model.parameters(), lr=params.l2_reg_lambda)
     criterion = nn.BCEWithLogitsLoss()
-    for epoch in range(1, params.num_epochs + 1):        
+    for epoch in range(1, 20 + 1): # replaced params.num_epochs to 20
         total_loss = 0
         for i, (batch) in enumerate(tqdm(batches)):
             # reset the hidden state of hierarchical attention model
