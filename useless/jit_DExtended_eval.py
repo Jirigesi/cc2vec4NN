@@ -45,6 +45,7 @@ def evaluation_model(data, params):
                 predict = model.forward(ftr, pad_msg, pad_code)
                 predict = predict.detach().numpy().tolist()
             all_predict += predict
+            print('all_predict:',all_predict)
             all_label += labels.tolist()
 
     auc_score = roc_auc_score(y_true=all_label,  y_score=all_predict)
