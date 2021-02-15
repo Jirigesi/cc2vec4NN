@@ -32,7 +32,7 @@ def extracted_cc2ftr(data, params):
             state_hunk = model.init_hidden_hunk()
 
             pad_added_code, pad_removed_code, labels = batch
-            labels = torch.cuda.FloatTensor(labels)
+            # labels = torch.cuda.FloatTensor(labels)
             commit_ftr = model.forward_commit_embeds_diff(pad_added_code, pad_removed_code, state_hunk, state_sent, state_word)            
             commit_ftrs.append(commit_ftr)
         commit_ftrs = torch.cat(commit_ftrs).cpu().detach().numpy()
