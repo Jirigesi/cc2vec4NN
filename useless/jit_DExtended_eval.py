@@ -47,6 +47,9 @@ def evaluation_model(data, params):
             all_predict += predict
             
             all_label += labels.tolist()
+    # Jiawei change here 
+    # find commit ID and results
+    # save into a csv
     print('all_predict:',all_predict)
     print('Predict len', len(all_predict))
 
